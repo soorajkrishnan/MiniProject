@@ -41,24 +41,29 @@
                 <div class="text-center">
                   <h4 class="text-dark mb-4">Start Caring</h4>
                 </div>
-                <form>
+                  <form action="register" method="POST">
                   <div class="card">
                     <div class="form-group row">
-                      <label for="inputEmail3" class="col-sm-2 col-form-label"
+                      <label for="email" class="col-sm-2 col-form-label"
                         >Email</label
                       >
                       <div class="col-sm-10">
                         <input
                           type="email"
                           class="form-control"
-                          id="inputEmail3"
+                          id="email"
+                          name="email"
                           placeholder="Email"
+                          aria-describedby="emailHelpInline"
                         />
                       </div>
+                      <small id="emailHelpInline" class="text-muted">
+                                 
+                          </small>
                     </div>
                     <div class="form-group row">
                       <label
-                        for="inputPassword3"
+                        for="password"
                         class="col-sm-2 col-form-label"
                         >Password</label
                       >
@@ -66,18 +71,24 @@
                         <input
                           type="password"
                           class="form-control"
-                          id="inputPassword3"
+                          id="password"
+                          name="password"
                           placeholder="Password"
+                          aria-describedby="passwordHelpInline"
                         />
                       </div>
+                      <small id="passwordHelpInline" class="text-muted">
+                                 
+                          </small>
                     </div>
                   </div>
                   <div class="form-group">
-                    <label for="inputAddress2">Organization Name</label>
+                    <label for="oname">Organization Name</label>
                     <input
                       type="text"
                       class="form-control"
-                      id="inputAddress2"
+                      id="oname"
+                      name="oname"
                       placeholder="Provide Name if NGO/ Orphanage"
                     />
                   </div>
@@ -88,6 +99,7 @@
                         type="text"
                         class="form-control"
                         id="Fname"
+                        name="Fname"
                         placeholder="First Name"
                       />
                     </div>
@@ -97,6 +109,7 @@
                         type="text"
                         class="form-control"
                         id="Lname"
+                        name="Lname"
                         placeholder="Last Name"
                       />
                     </div>
@@ -107,30 +120,37 @@
                       type="text"
                       class="form-control"
                       id="address"
+                      name="address"
                       placeholder="House Address / NGO Address"
                     />
                   </div>
                   <div class="form-group">
-                    <label for="address">Mobile Number</label>
+                    <label for="mnumber">Mobile Number</label>
                     <input
                       type="text"
                       class="form-control"
-                      id="address"
+                      id="mnumber"
                       placeholder=""
+                      name="mnumber"
+                      aria-describedby="mobileHelpInline"
                     />
+                    <small id="mobileHelpInline" class="text-muted">
+                                 
+                          </small>
                   </div>
 
                   <div class="form-row">
                     <div class="form-group col-md-5">
-                      <label for="inputCity">City</label>
-                      <input type="text" class="form-control" id="inputCity" />
+                      <label for="City">City</label>
+                      <input type="text" class="form-control" id="City" name="City" />
                     </div>
                     <div class="form-group col-md-4">
-                      <label for="inputState">State</label>
+                      <label for="State">State</label>
                       <select
-                        id="inputState"
+                        id="State"
                         class="form-control"
                         placeholder="State"
+                        name="State"
                       >
                         <option selected>Kerala</option>
                         <option>Tamil Nadu</option>
@@ -138,25 +158,39 @@
                       </select>
                     </div>
                     <div class="form-group col-md-3">
-                      <label for="Pincode">Pin Code</label>
-                      <input type="text" class="form-control" id="Pincode" />
-                    </div>
+                    <label for="pcode">Pincode</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="pcode"
+                      name="pcode"
+                      placeholder=""
+                      aria-describedby="pincodeHelpInline"
+                    />
+                    <small id="pincodeHelpInline" class="text-muted">
+                                 
+                          </small>
+                  </div>
                   </div>
                   <div class="form-group pl-3">
+                      <label">User Type</label>
                     <div class="form-check">
-                      <input
-                        class="form-check-input"
-                        type="checkbox"
-                        id="gridCheck"
-                      />
-                      <label class="form-check-label" for="gridCheck">
-                        Organization
-                      </label>
-                    </div>
+                    <input class="form-check-input" type="radio" name="typeo" id="typeo" value="0" checked>
+                    <label class="form-check-label" for="typeo">
+                      Organization
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="typeo" id="otype" value="1">
+                    <label class="form-check-label" for="otype">
+                      Donor
+                    </label>
+                  </div>
                   </div>
                   <div class="row mb-4">
+                      ${errors}
                     <div class="col text-center">
-                      <button type="submit" class="btn btn-primary">
+                      <button type="submit" class="btn btn-primary" onclick="valid()">
                         Sign Up
                       </button>
                     </div>
@@ -178,6 +212,7 @@
     <script src="assets/js/chart.min.js"></script>
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
+    <script src="assets/js/main.js"></script>
     <script src="assets/js/theme.js"></script>
   </body>
 </html>
