@@ -18,26 +18,28 @@ import javax.servlet.http.HttpSession;
 @WebServlet("/logout")
 public class logout extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-        @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	response.setContentType("text/html");
-    	Cookie[] cookies = request.getCookies();
-    	if(cookies != null){
-    	for(Cookie cookie : cookies){
-    		if(cookie.getName().equals("JSESSIONID")){
-    		}
-    		cookie.setMaxAge(0);
-    		response.addCookie(cookie);
-    	}
-    	}
-    	//invalidate the session if exists
-    	HttpSession session = request.getSession(false);
-    	if(session != null){
-    		session.invalidate();
-    	}
-    	//no encoding because we have invalidated the session
-    	response.sendRedirect("index.jsp");
-    }
+
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		//Session Closing
+		response.setContentType("text/html");
+		Cookie[] cookies = request.getCookies();
+		if (cookies != null) {
+			for (Cookie cookie : cookies) {
+				if (cookie.getName().equals("JSESSIONID")) {
+				}
+				cookie.setMaxAge(0);
+				response.addCookie(cookie);
+			}
+		}
+		// invalidate the session if exists
+		HttpSession session = request.getSession(false);
+		if (session != null) {
+			session.invalidate();
+		}
+		// no encoding because we have invalidated the session
+		response.sendRedirect("index.jsp");
+	}
 
 }
