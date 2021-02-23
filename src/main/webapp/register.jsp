@@ -34,13 +34,14 @@
                   <div class="text-center">
                     <h4 class="text-dark mb-4">Start Caring</h4>
                   </div>
-                  <form action="register" method="POST">
+                    <form action="register" method="POST" class="needs-validation" novalidate id="regform">
                     <div class="card">
                       <div class="form-group row">
                         <label for="email" class="col-sm-2 col-form-label">Email</label>
                         <div class="col-sm-10">
-                          <input type="email" class="form-control" id="email" name="email" placeholder="Email"
-                            aria-describedby="emailHelpInline" />
+                          <input type="email" class="form-control  " id="email" name="email" placeholder="Email"
+                            aria-describedby="emailHelpInline" required/>
+                          <div class="invalid-feedback">Please enter your Email. This field is required</div>
                         </div>
                         <small id="emailHelpInline" class="text-muted">
 
@@ -49,8 +50,9 @@
                       <div class="form-group row">
                         <label for="password" class="col-sm-2 col-form-label">Password</label>
                         <div class="col-sm-10">
-                          <input type="password" class="form-control" id="password" name="password"
-                            placeholder="Password" aria-describedby="passwordHelpInline" />
+                          <input type="password" class="form-control  " id="password" name="password"
+                            placeholder="Password" aria-describedby="passwordHelpInline" minlength="8" required/>
+                           <div class="invalid-feedback">Please enter your Password with 8 Characters. This field is required</div>
                         </div>
                         <small id="passwordHelpInline" class="text-muted">
 
@@ -59,28 +61,33 @@
                     </div>
                     <div class="form-group">
                       <label for="oname">Organization Name</label>
-                      <input type="text" class="form-control" id="oname" name="oname"
+                      <input type="text" class="form-control  " id="oname" name="oname"
                         placeholder="Provide Name if NGO/ Orphanage" />
+                      
                     </div>
                     <div class="form-row">
                       <div class="form-group col-md-6">
                         <label for="Fname">First Name</label>
-                        <input type="text" class="form-control" id="Fname" name="Fname" placeholder="First Name" />
+                        <input type="text" class="form-control " id="Fname" name="Fname" placeholder="First Name" required/>
+                        <div class="invalid-feedback">Please enter your First name. This field is required</div>
                       </div>
                       <div class="form-group col-md-6">
                         <label for="Lname">Last Name</label>
-                        <input type="text" class="form-control" id="Lname" name="Lname" placeholder="Last Name" />
+                        <input type="text" class="form-control " id="Lname" name="Lname" placeholder="Last Name" required/>
+                        <div class="invalid-feedback">Please enter your Last name. This field is required</div>
                       </div>
                     </div>
                     <div class="form-group">
                       <label for="address">Address</label>
-                      <input type="text" class="form-control" id="address" name="address"
-                        placeholder="House Address / NGO Address" />
+                      <input type="text" class="form-control " id="address" name="address"
+                        placeholder="House Address / NGO Address" required />
+                      <div class="invalid-feedback">Please enter Address. This field is required</div>
                     </div>
                     <div class="form-group">
                       <label for="mnumber">Mobile Number</label>
-                      <input type="text" class="form-control" id="mnumber" placeholder="" name="mnumber"
-                        aria-describedby="mobileHelpInline" />
+                      <input type="tel" class="form-control " id="mnumber" placeholder="" name="mnumber"
+                        aria-describedby="mobileHelpInline" pattern="[0-9]{10}" required />
+                      <div class="invalid-feedback">Please enter your mobile number. This field is required</div>
                       <small id="mobileHelpInline" class="text-muted">
 
                       </small>
@@ -89,20 +96,24 @@
                     <div class="form-row">
                       <div class="form-group col-md-5">
                         <label for="City">City</label>
-                        <input type="text" class="form-control" id="City" name="City" />
+                        <input type="text" class="form-control " id="City" name="City" required/>
+                        <div class="invalid-feedback">Please enter your City. This field is required</div>
                       </div>
                       <div class="form-group col-md-4">
                         <label for="State">State</label>
-                        <select id="State" class="form-control" placeholder="State" name="State">
+                        <select id="State" class="form-control " placeholder="State" name="State" required>
+                            
                           <option selected>Kerala</option>
                           <option>Tamil Nadu</option>
                           <option>Karnataka</option>
                         </select>
+                        <div class="invalid-feedback">Please enter your State. This field is required</div>
                       </div>
                       <div class="form-group col-md-3">
                         <label for="pcode">Pincode</label>
-                        <input type="text" class="form-control" id="pcode" name="pcode" placeholder=""
-                          aria-describedby="pincodeHelpInline" />
+                        <input type="text" class="form-control " id="pcode" name="pcode" placeholder=""
+                          aria-describedby="pincodeHelpInline" pattern="[0-9]{6}" required/>
+                        <div class="invalid-feedback">Please enter your Pincode with 6 digits. This field is required</div>
                         <small id="pincodeHelpInline" class="text-muted">
 
                         </small>
@@ -111,7 +122,7 @@
                     <div class="form-group pl-3">
                       <label">User Type</label>
                         <div class="form-check">
-                          <input class="form-check-input" type="radio" name="typeo" id="typeo" value="0" checked>
+                          <input class="form-check-input" type="radio" name="typeo" id="typeo" value="0" checked required>
                           <label class="form-check-label" for="typeo">
                             Organization
                           </label>
@@ -122,18 +133,19 @@
                             Donor
                           </label>
                         </div>
+                      <div class="invalid-feedback">Please enter your Password with 8 Characters. This field is required</div>
                     </div>
                     <div class="row mb-4">
                       ${errors}
                       <div class="col text-center">
-                        <button type="submit" class="btn btn-primary" onclick="valid()">
+                          <button type="submit" class="btn btn-primary" onsubmit="">
                           Sign Up
                         </button>
                       </div>
                     </div>
                   </form>
                   <div class="text-center">
-                    <a class="small" href="login.html">Already have an account? Login!</a>
+                    <a class="small" href="index.jsp">Already have an account? Login!</a>
                   </div>
                 </div>
               </div>
