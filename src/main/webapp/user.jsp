@@ -45,13 +45,13 @@
                         <div class="container-fluid d-flex flex-column p-0">
                             <hr class="sidebar-divider my-0">
                             <ul class="nav navbar-nav text-light" id="accordionSidebar">
-                                <li class="nav-item"><a class="nav-link" href="index.html"><i
+                                <li class="nav-item"><a class="nav-link" href="#"><i
                                             class="fa fa-plus-square-o" aria-hidden="true"></i><span>Give
                                             Donations</span></a></li>
                                 <li class="nav-item"><a class="nav-link" href="Remove.html"><i
                                             class="fa fa-minus-square-o" aria-hidden="true"></i><span>Cancel
                                             Donations</span></a></li>
-                                <li class="nav-item"><a class="nav-link" href="profile.html"><i
+                                <li class="nav-item"><a class="nav-link" href="profile.jsp"><i
                                             class="fas fa-user"></i><span>Profile</span></a></li>
                                 <li class="nav-item"><a class="nav-link" href="table.html"><i
                                             class="fas fa-table"></i><span>Donation List</span></a></li>
@@ -101,7 +101,7 @@
                                                         class="border rounded-circle img-profile"
                                                         src="assets/img/avatars/avatar1.jpeg"></a>
                                                 <div class="dropdown-menu shadow dropdown-menu-right animated--grow-in">
-                                                    <a class="dropdown-item" href="#"><i
+                                                    <a class="dropdown-item" href="profile.jsp"><i
                                                             class="fas fa-user fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Profile</a><a
                                                         class="dropdown-item" href="#"><i
                                                             class="fas fa-cogs fa-sm fa-fw mr-2 text-gray-400"></i>&nbsp;Settings</a><a
@@ -113,7 +113,7 @@
                                                             class="fas fa-sign-out-alt fa-sm fa-fw mr-2 text-gray-400"></i>
                                                         <form action="<%=response.encodeURL(" logout") %>"
                                                             method="post">
-                                                            <input type="submit" value="Logout">
+                                                            <input type="submit" class="btn" value="Logout">
                                                         </form>
                                                     </a>
                                                 </div>
