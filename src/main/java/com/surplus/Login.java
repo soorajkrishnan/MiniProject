@@ -78,7 +78,7 @@ public class Login extends HttpServlet {
                         }
 
                         // Redirection Based on User Type
-                        cookies(request, response, name);
+                        cookies(request, response, user);
                         if (email.equals(user) && psswd.equals(pwdd)) {
                                 if (email.equals("admin@surplus.com")) {
                                         String encodedURL = response.encodeRedirectURL("user.jsp");
