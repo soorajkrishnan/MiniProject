@@ -114,6 +114,7 @@
                                                         <form action="<%=response.encodeURL(" logout") %>"
                                                             method="post">
                                                             <input type="submit" class="btn" value="Logout">
+                                                            ${error}
                                                         </form>
                                                     </a>
                                                 </div>
@@ -133,44 +134,44 @@
                                                 <h3 class="heading text-dark">Donate Food</h3>
 
                                             </div>
-                                            <form action="" class="p-3">
+                                            <form action="fdonate" method="POST" class="p-3">
                                                 <div class="form-group">
                                                     <label for="food">Food Name</label>
-                                                    <input type="text" class="form-control" name="" id="food"
+                                                    <input type="text" class="form-control" name="fdname" id="food"
                                                         aria-describedby="helpId" placeholder="Food Name">
                                                 </div>
                                                 <div class="form-group">
-                                                    <label for="food type">Food Category</label>
-                                                    <select class="custom-select" name="" id="">
-                                                        <option selected value="">Cereal</option>
-                                                        <option value="">Vegitarian</option>
-                                                        <option value="">Non-Vegitarian</option>
+                                                    <label for="fdcat">Food Category</label>
+                                                    <select class="custom-select" name="fdcat" id="">
+                                                        <option selected value="Cereal">Cereal</option>
+                                                        <option value="Vegitarian">Vegitarian</option>
+                                                        <option value="Non-Vegitarian">Non-Vegitarian</option>
                                                     </select>
                                                 </div>
                                                 <label for="food type">Food Type</label>
                                                 <div class="form-check">
                                                     <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input" name="rad"
-                                                            id="radio" value="checkedValue" checked>
+                                                        <input type="radio" class="form-check-input" name="fdtype"
+                                                            id="radio" value="Fresh" checked>
                                                         Fresh
                                                     </label>
                                                     <label class="form-check-label ml-5">
-                                                        <input type="radio" class="form-check-input" name="rad"
-                                                            id="radio" value="checkedValue1">
+                                                        <input type="radio" class="form-check-input" name="fdtype"
+                                                            id="radio" value="Surplus">
                                                         Surplus
                                                     </label>
                                                 </div>
                                                 <br>
                                                 <div class="form-group">
                                                     <label for="">Location</label>
-                                                    <input type="text" class="form-control" name="" id=""
+                                                    <input type="text" class="form-control" name="fdlocation" id=""
                                                         aria-describedby="helpId"
                                                         placeholder="Location for food delivary">
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="">Contact Number</label>
-                                                    <input type="text" class="form-control" name="" id=""
+                                                    <input type="text" class="form-control" name="contnumber" id=""
                                                         aria-describedby="helpId" placeholder="Enter Contact Number">
                                                 </div>
                                                 <div class="form-row">
@@ -178,7 +179,7 @@
                                                     <div class="form-group col-md-6">
                                                         <label for="">Closing Date</label>
                                                         <div class="input-group date" id="datepicker">
-                                                            <input class="form-control" placeholder="MM/DD/YYYY" /><span
+                                                            <input class="form-control" placeholder="YYYY-MM-DD" type="date"  min="2020-01-01" max="2200-12-31" name="cdate" /><span
                                                                 class="input-group-append input-group-addon"><span
                                                                     class="input-group-text"><i
                                                                         class="fa fa-calendar"></i></span></span>
@@ -188,7 +189,7 @@
                                                         <label for="">Closing Time</label>
                                                         <div class="input-group time" id="timepicker">
                                                             <input class="form-control"
-                                                                placeholder="HH:MM AM/PM" /><span
+                                                                placeholder="HH:MM AM/PM" type="time" step="1" name="ctime"/><span
                                                                 class="input-group-append input-group-addon"><span
                                                                     class="input-group-text"><i
                                                                         class="fa fa-clock"></i></span></span>
@@ -210,43 +211,43 @@
                                                 <h3 class="heading text-dark">Other Donations</h3>
 
                                             </div>
-                                            <form action="" class="p-3">
+                                            <form action="odonate" method="POST" class="p-3">
                                                 <div class="form-group">
                                                     <label for="food type">Donation Category</label>
-                                                    <select class="custom-select" name="" id="">
-                                                        <option selected value="">Cloth</option>
-                                                        <option value="">Medicine</option>
-                                                        <option value="">Daily Items</option>
+                                                    <select class="custom-select" name="doncat" id="">
+                                                        <option selected value="Cloth">Cloth</option>
+                                                        <option value="Medicine">Medicine</option>
+                                                        <option value="Daily Items">Daily Items</option>
                                                     </select>
                                                 </div>
                                                 <label for="food type">Donation Type</label>
                                                 <div class="form-check ml-3">
                                                     <label class="form-check-label">
-                                                        <input type="radio" class="form-check-input" name="rad"
-                                                            id="radio" value="checkedValue" checked>
+                                                        <input type="radio" class="form-check-input" name="dontype"
+                                                            id="radio" value="Fresh" checked>
                                                         Fresh
                                                     </label>
                                                     <label class="form-check-label ml-5">
-                                                        <input type="radio" class="form-check-input" name="rad"
-                                                            id="radio" value="checkedValue1">
+                                                        <input type="radio" class="form-check-input" name="dontype"
+                                                            id="radio" value="Used">
                                                         Used
                                                     </label>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="">Details about Items</label>
-                                                    <textarea class="form-control" name="" id="" rows="3"></textarea>
+                                                    <textarea class="form-control" name="doi" id="" rows="3"></textarea>
                                                 </div>
                                                 <br>
                                                 <div class="form-group">
                                                     <label for="">Location</label>
-                                                    <input type="text" class="form-control" name="" id=""
+                                                    <input type="text" class="form-control" name="dloc" id=""
                                                         aria-describedby="helpId"
                                                         placeholder="Location for food delivary">
                                                 </div>
 
                                                 <div class="form-group">
                                                     <label for="">Contact Number</label>
-                                                    <input type="text" class="form-control" name="" id=""
+                                                    <input type="text" class="form-control" name="cnum" id=""
                                                         aria-describedby="helpId" placeholder="Enter Contact Number">
                                                 </div>
                                                 <button type="submit" class="btn btn-primary">Donate Items</button>
