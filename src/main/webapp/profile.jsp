@@ -172,11 +172,11 @@
                                     </div>
                                     <div class="card shadow mb-3">
                                         <div class="card-header py-3">
-                                            <p class="text-primary m-0 font-weight-bold">Update Details</p>
+                                            <p class="text-primary m-0 font-weight-bold" data-bs-toggle="tooltip" data-bs-placement="right" title="You can only update your Data !">Update Details</p>
                                         </div>
                                         <div class="card-body">
                                             
-                                            <form action="profile" method="POST">
+                                            <form action="profile" method="POST" class="needs-validation" novalidate>
                                                 <div class="form-row">
                                                     <div class="col">
                                                         <div class="form-group"><label for="email"><strong>Email Address</strong></label><input class="form-control" type="email" placeholder="<% out.print(email); %> " name="email"></div>
@@ -184,7 +184,7 @@
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="col">
-                                                        <div class="form-group"><label for="first_name"><strong>First Name</strong></label><input class="form-control" type="text" placeholder=" <% out.print(fname); %> " name="fname"></div>
+                                                        <div class="form-group"><label for="first_name"><strong>First Name</strong></label><input class="form-control" type="text" placeholder=" <% out.print(fname); %> " name="fname" required></div>
                                                     </div>
                                                     <div class="col">
                                                         <div class="form-group"><label for="last_name"><strong>Last Name</strong></label><input class="form-control" type="text" placeholder="<% out.print(lname); %> " name="lname"></div>
@@ -195,21 +195,23 @@
                                                 <div class="form-group">
                                                     <label for="phone"><strong>Mobile Number</strong></label>
                                                     <input type="tel" class="form-control" name="number"
-                                                        placeholder="<% out.print(phone); %>">
+                                                        placeholder="<% out.print(phone); %>" pattern="[0-9]{10}" required>
                                                 </div>
                                                 <div class="form-group">
                                                     <label for="address"><strong>Address</strong></label>
-                                                    <input class="form-control" type="text" placeholder="<% out.print(address); %>" name="address">
+                                                    <input class="form-control" type="text" placeholder="<% out.print(address); %>" name="address" required>
                                                 </div>
                                                 <div class="form-row">
                                                     <div class="col">
-                                                        <div class="form-group"><label for="city"><strong>City</strong></label><input class="form-control" type="text" placeholder="<% out.print(city); %>" name="city"></div>
+                                                        <div class="form-group"><label for="city"><strong>City</strong></label><input class="form-control" type="text" placeholder="<% out.print(city); %>" name="city" required></div>
                                                     </div>
                                                     <div class="col">
-                                                        <div class="form-group"><label for="state"><strong>State</strong></label><input class="form-control" type="text" placeholder="<% out.print(state); %>" name="state"></div>
+                                                        <div class="form-group"><label for="state"><strong>State</strong></label><input class="form-control" type="text" placeholder="<% out.print(state); %>" name="state" required></div>
                                                     </div>
                                                 </div>
-                                                <div class="form-group"><button class="btn btn-primary btn-sm" type="submit" name="update">Update Details</button></div>
+                                                <div class="form-group"><button class="btn btn-primary btn-md" type="submit" name="update">Update Details</button>
+                                                
+                                                </div>
                                     
                                             ${error}
                                             </form>
@@ -235,6 +237,8 @@
     <script src="assets/js/bs-init.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.js"></script>
     <script src="assets/js/theme.js"></script>
+    <script src="assets/js/main.js"></script>
+
 </body>
 
 </html>
