@@ -9,6 +9,7 @@
 <%@page import="java.sql.*,java.util.*"%>
 <%
                 String id=request.getParameter("id");
+                String type=request.getParameter("type");
                 String driverName = "com.mysql.jdbc.Driver";
                 String connectionUrl = "jdbc:mysql://localhost:3306/";
                 String dbName = "surplus";
@@ -24,11 +25,20 @@
 
                         Connection connection = DriverManager.getConnection(connectionUrl + dbName, userId, password);
                         Statement st=connection.createStatement();
+                        if (type=="update"){
                         int i=st.executeUpdate("DELETE FROM food WHERE FoodID="+id);
-                        RequestDispatcher rd = getServletContext().getRequestDispatcher("/remove.jsp");
+                        RequestDispatcher rd = getServletContext().getRequestDispatcher("/.jsp");
+                                request.setAttribute("error",
+                                               "<div class='alert alert-success' id='success-alert'><button type='button' class='close' data-dismiss='alert'></button><strong>Succesfully Deleted !</strong></div>");
+                                rd.include(request, response);}
+                        else{
+                            int i=st.executeUpdate("UPDATE food SET curr_status=0 where FoodId='" + id + "'");
+                        RequestDispatcher rd = getServletContext().getRequestDispatcher("logout.jsp");
                                 request.setAttribute("error",
                                                "<div class='alert alert-success' id='success-alert'><button type='button' class='close' data-dismiss='alert'></button><strong>Succesfully Deleted !</strong></div>");
                                 rd.include(request, response);
+                        }
+                        
                     } catch (SQLException e) 
                     {
                         out.print(e.getMessage());
