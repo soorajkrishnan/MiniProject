@@ -48,12 +48,12 @@
                                 <li class="nav-item"><a class="nav-link" href="#"><i
                                             class="fa fa-plus-square-o" aria-hidden="true"></i><span>Give
                                             Donations</span></a></li>
-                                <li class="nav-item"><a class="nav-link" href="Remove.html"><i
+                                <li class="nav-item"><a class="nav-link" href="remove.jsp"><i
                                             class="fa fa-minus-square-o" aria-hidden="true"></i><span>Cancel
                                             Donations</span></a></li>
                                 <li class="nav-item"><a class="nav-link" href="profile.jsp"><i
                                             class="fas fa-user"></i><span>Profile</span></a></li>
-                                <li class="nav-item"><a class="nav-link" href="table.html"><i
+                                <li class="nav-item"><a class="nav-link" href="dlist.jsp"><i
                                             class="fas fa-table"></i><span>Donation List</span></a></li>
 
                             </ul>
@@ -123,6 +123,7 @@
                                     </ul>
                                 </div>
                             </nav>
+                            
                             <div class="container-flex">
                                 <div class="d-sm-flex justify-content-between align-items-center m-3">
                                     <h3 class="text-dark text-center">Give Donations</h3>
@@ -259,7 +260,7 @@
                             </div>
                             <footer class="bg-white sticky-footer">
                                 <div class="container my-auto">
-                                    <div class="text-center my-auto copyright"><span>Copyright Â© Brand 2020</span>
+                                    <div class="text-center my-auto copyright"><span>Copyright © Brand 2020</span>
                                     </div>
                                 </div>
                             </footer>
